@@ -7,16 +7,12 @@
             <h1><a href="/">Gearoid & Kelly's Blog</a></h1>
         </div>
 
-        <div>
-            <p>published: 16.10.2016, 13:30</p>
-            <h2><a href="">First day in Ireland</a></h2>
-            <p>Today is a lovely and warm sunny day, and everything gonna to happen from now on.</p>
-        </div>
-
-        <div>
-            <p>published: 17.10.2016, 17:30</p>
-            <h2><a href="">We are moving to Hostel!</a></h2>
-            <p>Cannot explain how exciting I feel right now, tonight we will stay with a 8-bed mix dorm.</p>
-        </div>
+        {% for post in posts %}
+            <div>
+                <p>published: {{ post.published_date }}</p>
+                <h1><a href="">{{ post.title }}</a></h1>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+        {% endfor %}
     </body>
 </html>
